@@ -30,6 +30,11 @@ function ToDoList() {
     }
   }
 
+  function resetTasks() {
+    setTasks([]); 
+    localStorage.removeItem("tasks"); 
+  }
+
   function deleteTask(index) {
     const updatedTasks = tasks.filter((_, i) => i !== index);
     setTasks(updatedTasks);
@@ -53,7 +58,7 @@ function ToDoList() {
 
   return (
     <div className='to-do-list'>
-      <h1>TO DO LIST</h1>
+      <h1>To-do List ✍️</h1>
 
       <div>
         <input 
@@ -64,6 +69,9 @@ function ToDoList() {
         />
         <button className='add-btn' onClick={addTask}>
           Add
+        </button>
+        <button className='reset-btn' onClick={resetTasks}>
+          Reset
         </button>
       </div>
 
@@ -86,5 +94,6 @@ function ToDoList() {
     </div>
   );
 }
+
 
 export default ToDoList;
