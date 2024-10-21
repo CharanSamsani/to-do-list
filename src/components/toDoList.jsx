@@ -1,9 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function toDoList(){
     
     const [ tasks, setTasks ] = useState([]);
     const [ newTask, setNewTask ] = useState("");
+
+    // Load tasks from localStorage when the component mounts
+    useEffect(() => {
+        const savedTasks = JSON.parse(localStorage.getItem("tasks"));
+        if (savedTasks) {
+            setTasks(savedTasks);
+        }
+        }, []);
+
+    // Save tasks to localStorage whenever they change
+    useEffect(() => {
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }, [tasks]);
 
     function handleInputChange(event){
         setNewTask(event.target.value);
