@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 
-* {
-  font-family: Caveat;
-}
-
 body {
   background-image: url("./assets/paint splash.jpg");
   background-size: cover;
@@ -11,8 +7,9 @@ body {
 }
 
 .to-do-list {
+  font-family: Caveat;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,6 +22,7 @@ h1 {
 }
 
 button {
+  font-family: Caveat;
   font-size: 1.7rem;
   font-weight: bold;
   padding: 10px 20px;
@@ -76,6 +74,7 @@ button {
 }
 
 input[type="text"] {
+  font-family: Caveat;
   font-size: 1.6rem;
   padding: 10px;
   border: 2px solid hsla(185, 93%, 45%, 0.5);
@@ -112,8 +111,22 @@ li {
   flex-basis: 0%;
 }
 
-.delete-btn .move-btn { 
+.delete-btn .move-btn {
   padding: 8px 12px;
   font-size: 1.4rem;
   margin-left: 10px;
+}
+
+.footer {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: slategray;
+  text-align: center;
 }
